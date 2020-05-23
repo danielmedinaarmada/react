@@ -3,8 +3,8 @@ import '../assets/styles/components/Player.scss';
 
 const Player = () => {
   return(
-    <div className='PLayer'>
-      <video src="" controls autoPlay>
+    <div className='Player'>
+      <video controls autoPlay>
         <source src='' type='video/mp4'/>
       </video>
       <div className="Player-black">
@@ -14,6 +14,6 @@ const Player = () => {
       </div>
     </div>
   )
-}
+};
 
 export default Player;
