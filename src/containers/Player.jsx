@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useLayoutEffect } from 'react';
 import { connect } from 'react-redux';
 import { getVideoSource } from '../actions';
 //import { Redirect } from 'react-router-dom';
@@ -10,7 +10,7 @@ const Player = props => {
   const { id } = props.match.params;
   const hasPlaying = Object.keys(props.playing).length > 0;
 
-  useEffect( () => {
+  useLayoutEffect( () => {
     props.getVideoSource(id)
   }, []);
 
