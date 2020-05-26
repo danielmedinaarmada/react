@@ -1,4 +1,4 @@
-import React, { useLayoutEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import { getVideoSource } from '../actions';
 //import { Redirect } from 'react-router-dom';
@@ -9,10 +9,14 @@ const Player = props => {
 
   const { id } = props.match.params;
   const hasPlaying = Object.keys(props.playing).length > 0;
+  const [ loading, setLoading ] = useState(true);
 
-  useLayoutEffect( () => {
+  useEffect( () => {
     props.getVideoSource(id)
+    setLoading(false)
   }, []);
+
+  if (loading) return <h2>Cargando Video...</h2>
 
   return hasPlaying ? (
     <div className='Player'>
