@@ -10,9 +10,9 @@ const Search = ( props )  => {
     isHome,
   });
 
-  const handleInput = event=> {
+  const handleInput = event => {
     props.searchRequest(event.target.value)
-  }
+  };
 
   return(
     <section className="main">
